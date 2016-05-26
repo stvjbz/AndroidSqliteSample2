@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -86,6 +88,23 @@ public class MainActivity extends AppCompatActivity {
                 } catch(JSONException e) {
                     e.printStackTrace();
                 }
+
+                // Gson
+                Gson gson = new Gson();
+
+                // JSONからStringへの変換
+                String str = gson.fromJson("\"hello\"", String.class);
+                System.out.println("String: " + str);
+
+
+                // JSONから配列への変換
+                int[] array = gson.fromJson("[1, 2, 3]", int[].class);
+                System.out.println("int[]: " + array[0] + ", " + array[1] + ", " + array[2]);
+
+                // JSONからListへの変換
+                List list = gson.fromJson("[\"hello\", \"hellohello\",\"hellohellohello\"]", List.class);
+                System.out.println("List: " + list.get(0) + ", " + list.get(1) + ", " + list.get(2));
+
 
             }
         });
