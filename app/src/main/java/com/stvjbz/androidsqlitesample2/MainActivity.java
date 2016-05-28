@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 // JSONからListへの変換
                 List list = gson.fromJson("[\"hello\", \"hellohello\",\"hellohellohello\"]", List.class);
                 System.out.println("List: " + list.get(0) + ", " + list.get(1) + ", " + list.get(2));
+                System.out.println("List: " + list.get(0) + ", " + list.get(1) + ", " + list.get(2));
 
 
             }
